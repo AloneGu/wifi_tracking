@@ -48,15 +48,17 @@ def train_data():
     y_train = y_data[indices[:-10]]
     x_test  = x_data[indices[-10:]]
     y_test  = y_data[indices[-10:]]
-    knn.fit(x_train[:-5], y_train[:-5])
+    knn.fit(x_train[:-10], y_train[:-10])
     
     print 'test'
     test_result = knn.predict(x_test)
-    print 'predict result',
-    print test_result,
-    print [number_to_char(x) for x in test_result]
-    print 'ground_truth',
-    print y_test,
-    print [number_to_char(x) for x in y_test]
+    print 'predict result',test_result,[number_to_char(x) for x in test_result]
+    print 'ground_truth',y_test,[number_to_char(x) for x in y_test]
+    cnt = 0
+    for i in range(10):
+        if test_result[i] == y_test[i]:
+            cnt+=1
+    print 'accurate rate',cnt*1.0/10
 
-train_data()
+if __name__ == '__main__':
+    train_data()
