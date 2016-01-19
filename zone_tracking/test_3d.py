@@ -3,18 +3,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
-color_new_map = {1:'r',2:'g',3:'b',4:'y',5:'k',6:'w'}
+color_new_map = {1: 'r', 2: 'g', 3: 'b', 4: 'y', 5: 'k', 6: 'w'}
 
 
 def test_draw():
-    x_data ,y_data,_ = parse_txt()
+    x_data, y_data, _, _ = parse_txt()
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
 
-    data_cnt =  len(x_data)
-    x =[]
-    y =[]
-    z =[]
+    data_cnt = len(x_data)
+    x = []
+    y = []
+    z = []
     colors = []
 
     for i in range(data_cnt):
@@ -33,5 +33,4 @@ def test_draw():
 
 
 if __name__ == '__main__':
-
     test_draw()
